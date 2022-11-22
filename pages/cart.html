@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Flowee</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/reset.min.css" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,200&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="wrapper site-header__wrapper">
+              <img class="logo" src="../images/FLOWEE (1).svg">
+              <nav class="nav">
+                <button class="nav__toggle" aria-expanded="false" type="button">
+                  menu
+                </button>
+                <ul class="nav__wrapper">
+                  <li class="nav__item"><a class="nav_a" href="./index.html">купить</a></li>
+                  <li class="nav__item"><a class="nav_a" href="./sell.html">продать</a></li>
+                  <li class="nav__item"><a class="nav_a" href="./about.html">о нас</a></li>
+                  <li class="nav__item"><a href="./cart.html">корзина</a></li>
+                </ul>
+              </nav>
+            </div>
+          </header>
+
+          <div class="cart-list-wrapper">
+            <ul class="order-list">
+                <li class="order-list-item">
+                    <div class="order-item">
+                        <p>Букет"Андрей"</p>
+                        <p>700$</p>
+                    </div>
+                </li>
+                <li class="order-list-item">
+                    <div class="order-item">
+                        <p>Букет"Притончик"</p>
+                        <p>85$</p>
+                    </div>
+                </li>
+            </ul>
+          </div>
+          <div class="order-form-wrapper">
+            <form class="order-form">
+                <ul class="order-form-list">
+                    <li>
+                        <input type="text" id="name" placeholder="Имя">
+                    </li>
+                    <li>
+                        <input type="text" id="surname" placeholder="Фамилия">
+                    </li>
+                    <li>
+                        <input type="text" id="address" placeholder="Адрес доставки">
+                    </li>
+                    <li>
+                        <input type="tel" id="phone" placeholder="Номер телефона">
+                    </li>
+                    <li>
+                        <input type="email" id="email" placeholder="Email">
+                    </li>
+                </ul>
+                <div class="card-info">
+                    <div class="card-number-logo">
+                        <img src="../images/Sberbank_Logo_2020.svg" class="card-logo">
+                        <input type="number" placeholder="Номер карты">
+                    </div>
+                    <input type="date" placeholder="Дата">
+                    <input type="text" placeholder="Имя Фамилия">
+                </div>
+
+            </form>
+          </div>
+
+          <footer>
+            <h5 class="footer_sign">Developed by Markov.F</h5>
+            <a href="https://github.com/MarkovFedor"><img class = "footer_image" src="../images/githublogo.png"></a>
+            <a href="https://t.me/markovF"><img class = "footer_image" src="../images/telegram-logo.svg"></a>
+        </footer>
+    </body>
+</html>
