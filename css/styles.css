@@ -21,40 +21,26 @@
     .nav__wrapper {
       display: flex; } }
   
-  @media (max-width: 599px) {
-    .nav__wrapper {
-      position: absolute;
-      top: 100%;
-      right: 0;
-      left: 0;
-      z-index: -1;
-      background-color: #d9f0f7;
-      visibility: hidden;
-      opacity: 0;
-      transform: translateY(-100%);
-      transition: transform 0.3s ease-out, opacity 0.3s ease-out; }
-      .nav__wrapper.active {
-        visibility: visible;
-        opacity: 1;
-        transform: translateY(0); } }
+  
   
   .nav__item a {
     display: block;
     padding: 1.5rem 3rem;
-    font-weight: 400; 
+    font-weight: 400; }
+    @media (max-width: 600px) {
+      .nav__item a {
+      display: flex;
+      justify-content: center;
+    }
 }
   
   .nav__toggle {
     display: none; }
-    @media (max-width: 599px) {
-      .nav__toggle {
-        display: block;
-        position: absolute;
-        right: 1rem;
-        top: 1rem; } }
+    
   
 .logo {
-    max-width: 15%;
+    /*max-width: 15%;*/
+    width: 9rem;
 }
 
 .products {
@@ -157,6 +143,14 @@ footer {
     margin: 2rem;
     /* max-width: 70%; */
     justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+@media screen and (max-width: 600px) {
+  .why {
+    flex-direction: column;
+  }
 }
 
 .inner-why {
@@ -186,7 +180,15 @@ footer {
     /* max-width: 70%; */
     justify-content: center;
     flex-direction: row-reverse;
+    align-items: center;
 }
+
+@media screen and (max-width: 600px) {
+  .us {
+    flex-direction: column;
+  }
+}
+
 
 .inner-us {
   max-width: 60%;
@@ -226,6 +228,14 @@ footer {
     border-radius: 15px;
 }
 
+.empty-cart {
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+    border-radius: 15px;
+}
+
 .order-list {
   width: 100%;
 }
@@ -254,9 +264,9 @@ footer {
 .card-info {
   background-color: #e3e3e3;
     border-radius: 15px;
-    width: 70%;
+    width: 100%;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -275,4 +285,22 @@ footer {
 .card-number-logo {
   display: flex;
   width: 100%;
+}
+
+a.nav_a {
+  white-space: nowrap
+}
+
+.price-button {
+  display: flex;
+  flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-end
+}
+
+.del-image {
+  height: 1.5rem;
+  padding-left:1rem;
 }

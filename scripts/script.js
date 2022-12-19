@@ -12,7 +12,7 @@ function myFunc(input) {
             reader[i] = new FileReader();
             reader[i].readAsDataURL(input.files[i]);
             
-            images.innerHTML += '<img id="'+ name +'" src="" />';
+            images.innerHTML += '<img class="selling-image" id="'+ name +'" src="" />';
             
             (function (name) {
                 reader[i].onload = function (e) {
@@ -25,4 +25,24 @@ function myFunc(input) {
             console.log(files[i]);
         }
     }
+    return files;
 }
+
+
+
+let navToggle = document.querySelector(".nav__toggle");
+let navWrapper = document.querySelector(".nav__wrapper");
+
+navToggle.addEventListener("click", function () {
+    console.log("worked");
+  if (navWrapper.classList.contains("active")) {
+    this.setAttribute("aria-expanded", "false");
+    this.setAttribute("aria-label", "menu");
+    navWrapper.classList.remove("active");
+  } else {
+    navWrapper.classList.add("active");
+    this.setAttribute("aria-label", "close menu");
+    this.setAttribute("aria-expanded", "true");
+  }
+});
+
