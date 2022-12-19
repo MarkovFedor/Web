@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,200&display=swap" rel="stylesheet">
+        <script src="../scripts/cartLocalStorage.js"></script>
     </head>
     <body>
         <header class="site-header">
@@ -18,7 +19,7 @@
                   menu
                 </button>
                 <ul class="nav__wrapper">
-                  <li class="nav__item"><a class="nav_a" href="./index.html">купить</a></li>
+                  <li class="nav__item"><a class="nav_a" href="../index.html">купить</a></li>
                   <li class="nav__item"><a class="nav_a" href="./sell.html">продать</a></li>
                   <li class="nav__item"><a class="nav_a" href="./about.html">о нас</a></li>
                   <li class="nav__item"><a href="./cart.html">корзина</a></li>
@@ -28,23 +29,12 @@
           </header>
 
           <div class="cart-list-wrapper">
-            <ul class="order-list">
-                <li class="order-list-item">
-                    <div class="order-item">
-                        <p>Букет"Андрей"</p>
-                        <p>700$</p>
-                    </div>
-                </li>
-                <li class="order-list-item">
-                    <div class="order-item">
-                        <p>Букет"Притончик"</p>
-                        <p>85$</p>
-                    </div>
-                </li>
+            <ul class="order-list" id="order-list-id">
+                
             </ul>
           </div>
           <div class="order-form-wrapper">
-            <form class="order-form">
+            <form class="order-form" id="order-form-id">
                 <ul class="order-form-list">
                     <li>
                         <input type="text" id="name" placeholder="Имя">
@@ -63,14 +53,12 @@
                     </li>
                 </ul>
                 <div class="card-info">
-                    <div class="card-number-logo">
                         <img src="../images/Sberbank_Logo_2020.svg" class="card-logo">
-                        <input type="number" placeholder="Номер карты">
-                    </div>
-                    <input type="date" placeholder="Дата">
-                    <input type="text" placeholder="Имя Фамилия">
+                        <input type="number" id="card-number" placeholder="Номер карты">
+                    <input type="date" id="card-date" placeholder="Дата">
+                    <input type="text" id="card-holder" placeholder="Имя Фамилия">
                 </div>
-
+                <input type="submit">
             </form>
           </div>
 

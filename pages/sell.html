@@ -9,6 +9,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,200&display=swap" rel="stylesheet">
         <script src="../scripts/script.js"></script>
+        <script src="../scripts/localstorage.js"></script>
     </head>
     <body>
         <header class="site-header">
@@ -19,7 +20,7 @@
                   menu
                 </button>
                 <ul class="nav__wrapper">
-                  <li class="nav__item"><a class="nav_a" href="./index.html">купить</a></li>
+                  <li class="nav__item"><a class="nav_a" href="../index.html">купить</a></li>
                   <li class="nav__item"><a class="nav_a" href="./sell.html">продать</a></li>
                   <li class="nav__item"><a class="nav_a" href="./about.html">о нас</a></li>
                   <li class="nav__item"><a href="./cart.html">корзина</a></li>
@@ -28,7 +29,7 @@
             </div>
           </header>
           <div class="selling-form-wrapper">
-            <form class="selling-form">
+            <form class="selling-form" id="selling-form-id" onsubmit="store()">
                 <ul>
                     <li>
                         <div id="images"></div>

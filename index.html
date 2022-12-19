@@ -8,6 +8,8 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,200&display=swap" rel="stylesheet">
+        <script src="./scripts/script.js"></script>
+        <script src="./scripts/indexScripts.js"></script>
     </head>
     <body>
         <header class="site-header">
@@ -18,7 +20,7 @@
                   menu
                 </button>
                 <ul class="nav__wrapper">
-                  <li class="nav__item"><a class="nav_a" href="index.html">купить</a></li>
+                  <li class="nav__item"><a class="nav_a" href="./index.html">купить</a></li>
                   <li class="nav__item"><a class="nav_a" href="./pages/sell.html">продать</a></li>
                   <li class="nav__item"><a class="nav_a" href="./pages/about.html">о нас</a></li>
                   <li class="nav__item"><a href="./pages/cart.html">корзина</a></li>
@@ -26,16 +28,9 @@
               </nav>
             </div>
           </header>
-        <section class="products">
+        <section class="products" id="products-id">
           
-            <div class="product-card">
-                <img src="./images/testing.jpg">
-              <div class="product-info">
-                <a href="./details.html"><h5>Winter Jacket</h5></a>
-                <h6>$99.99</h6>
-              </div>
-            </div>
-            <div class="product-card">
+              <div class="product-card" onclick="addToCart(this)">
                 <div class="product-image">
                   <img src="./images/testing.jpg">
                 </div>
@@ -44,16 +39,7 @@
                   <h6>$99.99</h6>
                 </div>
               </div>
-              <div class="product-card">
-                <div class="product-image">
-                  <img src="./images/testing.jpg">
-                </div>
-                <div class="product-info">
-                  <h5>Winter Jacket</h5>
-                  <h6>$99.99</h6>
-                </div>
-              </div>
-              <div class="product-card">
+              <div class="product-card" onclick="addToCart(this)">
                 <div class="product-image">
                   <img src="./images/testing.jpg">
                 </div>
@@ -68,8 +54,8 @@
           </section>
         <footer>
             <h5 class="footer_sign">Developed by Markov.F</h5>
-            <a href="https://github.com/MarkovFedor"><img class = "footer_image" src="../images/githublogo.png"></a>
-            <a href="https://t.me/markovF"><img class = "footer_image" src="../images/telegram-logo.svg"></a>
+            <a href="https://github.com/MarkovFedor"><img class = "footer_image" src="./images/githublogo.png"></a>
+            <a href="https://t.me/markovF"><img class = "footer_image" src="./images/telegram-logo.svg"></a>
         </footer>
     </body>
 </html>
