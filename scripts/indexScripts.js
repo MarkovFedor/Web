@@ -33,7 +33,7 @@ function addToCart(element) {
       cart = JSON.parse(localStorage.getItem("cart"));
     }
     if(cart.find(item => item.name == productName)) {
-        alert("Товар уже в корзине");
+        notie.alert({text: "hello"});
         return;
     }
 

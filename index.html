@@ -1,61 +1,146 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Flowee</title>
-        <link rel="stylesheet" href="./css/styles.css">
-        <link rel="stylesheet" href="./css/reset.min.css" />
-        <link rel="stylesheet" href="./css/style.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,200&display=swap" rel="stylesheet">
-        <script src="./scripts/script.js"></script>
-        <script src="./scripts/indexScripts.js"></script>
-    </head>
-    <body>
-        <header class="site-header">
-            <div class="wrapper site-header__wrapper">
-              <img class="logo" src="./images/FLOWEE (1).svg">
-              <nav class="nav">
-                <button class="nav__toggle" aria-expanded="false" type="button">
-                  menu
-                </button>
-                <ul class="nav__wrapper">
-                  <li class="nav__item"><a class="nav_a" href="./index.html">купить</a></li>
-                  <li class="nav__item"><a class="nav_a" href="./pages/sell.html">продать</a></li>
-                  <li class="nav__item"><a class="nav_a" href="./pages/about.html">о нас</a></li>
-                  <li class="nav__item"><a href="./pages/cart.html">корзина</a></li>
-                </ul>
-              </nav>
-            </div>
-          </header>
-        <section class="products" id="products-id">
-          
-              <div class="product-card" onclick="addToCart(this)">
-                <div class="product-image">
-                  <img src="./images/testing.jpg">
-                </div>
-                <div class="product-info">
-                  <h5>Winter Jacket</h5>
-                  <h6>$99.99</h6>
-                </div>
-              </div>
-              <div class="product-card" onclick="addToCart(this)">
-                <div class="product-image">
-                  <img src="./images/testing.jpg">
-                </div>
-                <div class="product-info">
-                  <h5>Winter Jacket</h5>
-                  <h6>$99.99</h6>
-                </div>
-              </div>
-          
-            <!-- more products -->
-          
-          </section>
-        <footer>
-            <h5 class="footer_sign">Developed by Markov.F</h5>
-            <a href="https://github.com/MarkovFedor"><img class = "footer_image" src="./images/githublogo.png"></a>
-            <a href="https://t.me/markovF"><img class = "footer_image" src="./images/telegram-logo.svg"></a>
-        </footer>
-    </body>
+  <head>
+    <title>Flowee</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/reset.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,200&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./scripts/script.js"></script>
+    <script src="./scripts/indexScripts.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/notie/dist/notie.min.css"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper site-header__wrapper">
+        <img class="logo" src="./images/FLOWEE (1).svg" />
+        <nav class="nav">
+          <button class="nav__toggle" aria-expanded="false" type="button">
+            menu
+          </button>
+          <ul class="nav__wrapper">
+            <li class="nav__item">
+              <a class="nav_a" href="./index.html">купить</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav_a" href="./pages/sell.html">продать</a>
+            </li>
+            <li class="nav__item">
+              <a class="nav_a" href="./pages/about.html">о нас</a>
+            </li>
+            <li class="nav__item"><a href="./pages/cart.html">корзина</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="products" id="products-id">
+      <div class="product-card" onclick="addToCart(this)">
+        <div class="product-image">
+          <img src="./images/testing.jpg" />
+        </div>
+        <div class="product-info">
+          <h5>Winter Jacket</h5>
+          <h6>$99.99</h6>
+        </div>
+      </div>
+      <div class="product-card" onclick="addToCart(this)">
+        <div class="product-image">
+          <img src="./images/testing.jpg" />
+        </div>
+        <div class="product-info">
+          <h5>Winter Jacket</h5>
+          <h6>$99.99</h6>
+        </div>
+      </div>
+
+      <!-- more products -->
+      <script src="https://unpkg.com/notie"></script>
+      <script>
+        function loadItems() {
+          var items = [];
+          console.log(localStorage.getItem("allItems"));
+          if (localStorage.getItem("allItems") != null) {
+            items = JSON.parse(localStorage.getItem("allItems"));
+          }
+          console.log(items);
+          var itemsWrapper = document.getElementById("products-id");
+
+          for (element of items) {
+            itemsWrapper.innerHTML +=
+              `
+        <div class="product-card" onclick="addToCart(this)">
+        <div class="product-image">
+          <img src="` +
+              element.images +
+              `">
+        </div>
+        <div class="product-info">
+          <h5 onclick="addToCart(this)">` +
+              element.name +
+              `</h5>
+          <h6>` +
+              element.price +
+              `</h6>
+        </div>
+      </div>
+        `;
+          }
+        }
+
+        function addToCart(element) {
+          if (element == undefined) return;
+          const children = element.childNodes;
+          const innerChildren = children[3].childNodes;
+          const productName = innerChildren[1].innerText;
+          const price = innerChildren[3].innerText;
+          var cart = [];
+          if (localStorage.hasOwnProperty("cart")) {
+            cart = JSON.parse(localStorage.getItem("cart"));
+          }
+          if (cart.find((item) => item.name == productName)) {
+            notie.alert({ 
+              type: 3,
+              text: "Товар уже в корзине",
+            });
+            return;
+          } else {
+            notie.alert({
+              type: 1,
+              text: productName+ ` добавлен в корзину`,
+            })
+          }
+
+          cart.push({
+            name: productName,
+            price: price,
+          });
+          console.log("Работает");
+          localStorage.setItem("cart", JSON.stringify(cart));
+        }
+
+        window.onload = function () {
+          loadItems();
+          addToCart();
+        };
+      </script>
+    </section>
+    <footer>
+      <h5 class="footer_sign">Developed by Markov.F</h5>
+      <a href="https://github.com/MarkovFedor"
+        ><img class="footer_image" src="./images/githublogo.png"
+      /></a>
+      <a href="https://t.me/markovF"
+        ><img class="footer_image" src="./images/telegram-logo.svg"
+      /></a>
+    </footer>
+  </body>
 </html>

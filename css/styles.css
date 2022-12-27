@@ -60,6 +60,7 @@
     border-color: rgb(8, 8, 8);
     border-style: solid;
     border-radius: 15px;
+    cursor: pointer;
     }
 
   .product-card img {
@@ -303,4 +304,5 @@ a.nav_a {
 .del-image {
   height: 1.5rem;
   padding-left:1rem;
+  cursor: pointer;
 }
